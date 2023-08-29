@@ -1,8 +1,8 @@
 [build]
   base = "sites/www"
-  command = "eleventy"
-  functions = "netlify/functions"
-  publish = "public"
+  command = "nx run www:build"
+  functions = "sites/www/netlify/functions"
+  publish = "sites/www/public"
 
 #[build.environment]
   #NODE_VERSION = "18.7.0"
