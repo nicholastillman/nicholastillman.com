@@ -2,7 +2,7 @@
   base = "sites/www"
   command = "nx run www:build"
   functions = "sites/www/netlify/functions"
-  publish = "sites/www/public"
+  publish = "public"
 
 #[build.environment]
   #NODE_VERSION = "18.7.0"
