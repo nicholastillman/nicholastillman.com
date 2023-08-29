@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Libre+Barcode+39+Extended+Text&family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+
+:root {
+  // ---------------------------------------- [ START CSS Variable Settings ] //
+  // Global Ratio and Modular Scale
+  --ratio: 1.5;
+  --flow-space: 2rem;
+  --default-font: 'Montserrat', sans-serif;
+
+  // Color
+  --color-gradient: linear-gradient(var(--color-accent-secondary), var(--color-accent));
+  --color-primary100: #8c6d5e;
+  --color-primary200: #d3c2a6;
+  --color-secondary: #2b5881;
+  --color-accent: #fabf39;
+  --color-accent-secondary: #f7b801;
+  --color-accent-critical: #fa1d4c;
+  --color-accent-success: #15a14b;
+  --color-neutral-light100: #fff;
+  --color-neutral-light200: #f1f1f1;
+  --color-neutral-dark100: #333;
+  --color-neutral-dark200: #303030;
+  --color-neutral-light200: #f1f1f1;
+  --color-neutral-light300: #e2e2e0;
+  --color-light: #fafafa;
+  --color-dark: #191c1b;
+  --color-dark-shade: #43464d;
+  --color-dark-grey: #363938;
+  // --color-dark: #060506;
+  // --color-dark-highlight: #423c42;
+  // --color-dark-shade: #2b272b;
+  // --color-grey: #ededed;
+  // --color-dark-grey: #979797;
+  // Font-family
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  --fw-normal: 400;
+  --fw-light: 100;
+  --fw-demi: 'demi-bold';
+
+  // Typescale: Major-Third (1.250)
+  --size-caption: 0.8rem; // 12.08px
+  --size-body: 1rem; // 16px
+  --size-100: 1.25rem; // 20px
+  --size-200: 1.56rem; // 25px
+  --size-300: 1.95rem; // 31.25px
+  --size-400: 2rem; // 32px
+  --size-500: 2.4rem; // 39.06px
+  --size-600: 3rem; // 48.83px
+  // -------------------- Spacing
+  --space-100: #{var(--size-100)};
+  --space-200: #{var(--size-200)};
+  --space-300: #{var(--size-300)};
+  --space-400: #{var(--size-400)};
+  --space-500: #{var(--size-500)};
+  --space-600: #{var(--size-500)};
+}
+
+body {
+  font: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+a {
+  color: var(--color-dark);
+  &:visited {
+    color: var(--color-dark);
+  }
+}
+// .nav-link {
+//   color: #1a1818;
+//   text-align: center;
+//   letter-spacing: 5px;
+//   text-transform: uppercase;
+//   border: 0 solid #000;
+//   font-family: 'Montserrat', sans-serif;
+//   font-size: 10px;
+//   font-weight: 500;
+//   text-decoration: none;
+//   transition: opacity 0.3s;
+//   display: block;
+// }

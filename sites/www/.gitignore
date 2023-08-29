@@ -1,0 +1,41 @@
+.tmp
+node_modules
+public/build
+.env*
+
+# System Files
+.DS_Store
+Thumbs.db
+.cache
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+dist
+
+src/_data/utils/*
+!src/_data/utils/getProducts.js
+!src/_data/utils/productQuery.js
+!src/_data/utils/serializers.js
+!src/_data/utils/Readme.txt
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+node_modules
+/.cache
+/netlify/functions/server/build
+/public/build
+/public
+/dist
+/.netlify
+.netlify/

@@ -1,0 +1,229 @@
+:root {
+  // ---------------------------------------- [ START CSS Variable Settings ] //
+  // Global Ratio and Modular Scale
+  --ratio: 1.5;
+  --flow-space: 2rem;
+  --default-font: 'Montserrat', sans-serif;
+
+  // Color
+  --color-gradient: linear-gradient(var(--color-accent-secondary), var(--color-accent));
+  --color-primary100: #8c6d5e;
+  --color-primary200: #d3c2a6;
+  --color-secondary: #2b5881;
+  --color-secondary200: #2a7bd2;
+  --color-accent: #fabf39;
+  --color-accent-secondary: #f7b801;
+  --color-accent-critical: #fa1d4c;
+  --color-accent-critical-secondary: #ea0c2d;
+  --color-accent-success: #15a14b;
+  --color-neutral-light100: #fff;
+  --color-neutral-light200: #f1f1f1;
+  --color-neutral-dark100: #333;
+  --color-neutral-dark200: #303030;
+  --color-neutral-light200: #f1f1f1;
+  --color-neutral-light300: #e2e2e0;
+  --color-light: #fafafa;
+  --color-light-shade: #DADCE8;
+  --color-dark: #191c1b;
+  --color-dark-shade: #43464d;
+  --color-dark-grey: #363938;
+
+
+  // --color-dark: #060506;
+  // --color-dark-highlight: #423c42;
+  // --color-dark-shade: #2b272b;
+  // --color-grey: #ededed;
+  // --color-dark-grey: #979797;
+  // Font-family
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  --font-accent1: 'Libre Barcode 39 Extended Text', cursive;
+  --font-accent2: 'Questrial', sans-serif;
+
+  --fw-normal: 400;
+  --fw-light: 100;
+  --fw-demi: 'demi-bold';
+
+  // Typescale: Major-Third (1.250)
+  --size-caption: 0.8rem; // 12.08px
+  --size-body: 1rem; // 16px
+  --size-100: 1.25rem; // 20px
+  --size-200: 1.56rem; // 25px
+  --size-300: 1.95rem; // 31.25px
+  --size-400: 2rem; // 32px
+  --size-500: 2.4rem; // 39.06px
+  --size-600: 3rem; // 48.83px
+  // -------------------- Spacing
+  --space-100: #{var(--size-100)};
+  --space-200: #{var(--size-200)};
+  --space-300: #{var(--size-300)};
+  --space-400: #{var(--size-400)};
+  --space-500: #{var(--size-500)};
+  --space-600: #{var(--size-500)};
+
+
+--ft-size-300: clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem);
+--ft-size-400: clamp(0.88rem, 0.83rem + 0.24vw, 1rem);
+--ft-size-500: clamp(1.09rem, 1rem + 0.47vw, 1.25rem);
+--ft-size-600: clamp(1.37rem, 1.21rem + 0.8vw, 1.56rem);
+--ft-size-700: clamp(1.71rem, 1.45rem + 1.29vw, 1.95rem);
+--ft-size-800: clamp(2.14rem, 1.74rem + 1.99vw, 2rem);
+--ft-size-900: clamp(2.67rem, 2.07rem + 3vw, 2.4rem);
+--ft-size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 3rem);
+
+// Animation easing
+  --ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+// h1, h2, h3, h4, h5 {}
+$base: #DADCE8;
+$ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+// best in chrome
+$total: 300; // total particles
+$orb-size: 100px;
+$particle-size: 2px;
+$time: 14s; 
+$base-hue: 0; // change for diff colors (180 is nice)
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: var(--color-neutral-light100);
+  // background-color: $base;
+  font-family: var(--font-primary);
+  transition: all 400ms ease-out;
+}
+._pb-0 {padding-bottom:0;}
+
+[disabled] {
+  // background-color: dimgrey;
+  color: var(--color-neutral-light200)!important;
+  opacity: 1;
+  pointer-events: none;
+  &:hover {
+    cursor:not-allowed;
+  }
+}
+
+.module .sc-hc-header {
+  color: var(--color-dark-grey);
+transition: all 360ms ease-out;
+  &:hover {
+    color: var(--color-accent-critical);
+  }
+}
+
+footer {
+  padding-left: var(--size-200);
+  padding-right: var(--size-200);
+  position: absolute;
+  bottom: 3rem;
+  @media (min-width:800px) {
+  .meta {
+      display: none;
+    }
+  }
+}
+
+
+// Playground -testing BG animations
+// .drop {
+// 	position: relative;
+// 	position: absolute;
+// 	transform-origin: 50% 50%;
+// 	transform: translate(-50%, -50%);
+// 	width: 50vmin;
+// 	height: 50vmin;
+// 	border-radius: 50%;
+// 	// background: #000;
+// 	filter: blur(1vmin);
+// 	box-shadow: -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							5vmin 5vmin 5vmin darken($base, 10%),
+// 							inset -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							inset 5vmin 5vmin 5vmin darken($base, 10%);
+// 	border: 0 solid $base;
+// 	animation: expand 4s $ease infinite;
+//   display: none;
+	
+// 	@keyframes expand {
+// 		0% {
+// 			width: 0;
+// 			height: 0;
+// 			box-shadow: -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							5vmin 5vmin 5vmin darken($base, 10%),
+// 							inset -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							inset 5vmin 5vmin 5vmin darken($base, 10%);
+// 			border: 0 solid transparentize($base, .5);
+// 		}
+// 		5% {
+// 			box-shadow: -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							5vmin 5vmin 5vmin darken($base, 10%),
+// 							inset -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							inset 5vmin 5vmin 5vmin darken($base, 10%);
+// 			border: 2vmin solid transparentize($base, .5);
+// 		}
+// 		90% {
+// 			box-shadow: none;
+// 			border: 2vmin solid transparentize($base, .5);
+// 		}
+// 		100% {
+// 			width: 100vmin;
+// 			height: 100vmin;
+// 			box-shadow: none;
+// 			border: 0 solid transparentize($base, .5);
+// 		}
+// 	}
+	
+// 	&:before {
+// 		content: '';
+// 		position: absolute;
+// 		margin: auto;
+// 		left: 0;
+// 		top: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		width: 0%;
+// 		height: 0%;
+// 		border-radius: 50%;
+// 		animation: expand1 4s $ease infinite;
+// 		box-shadow: -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							5vmin 5vmin 5vmin darken($base, 10%),
+// 							inset -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							inset 5vmin 5vmin 5vmin darken($base, 10%);
+		
+// 		@keyframes expand1 {
+// 			0% {
+// 				width: 0%;
+// 				height: 0%;
+// 				// opacity: 1;
+// 				box-shadow: -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							5vmin 5vmin 5vmin darken($base, 10%),
+// 							inset -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							inset 5vmin 5vmin 5vmin darken($base, 10%);
+// 				border: 0 solid $base;
+// 			}
+// 			20% {
+// 				box-shadow: -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							5vmin 5vmin 5vmin darken($base, 10%),
+// 							inset -5vmin -5vmin 5vmin lighten($base, 5%),
+// 							inset 5vmin 5vmin 5vmin darken($base, 10%);
+// 			}
+// 			100% {
+// 				width: 60%;
+// 				height: 60%;
+// 				// opacity: 0;
+// 				box-shadow: none;
+// 				border: 1vmin solid $base;
+// 			}
+// 		}
+// 	}
+// }
+
+// Move later
+@media (max-width:800px) {
+    hc-asidenav {
+    display: none;
+  }
+}

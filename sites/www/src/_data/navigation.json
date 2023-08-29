@@ -1,0 +1,8 @@
+{
+  "menuItems": [
+    {"text": "Work", "label":"Explore my work","url": "work", "disabled": false},
+    {"text": "About", "label":"Get to know me","url": "about", "disabled": false},
+    {"text": "Journal", "label":"Hello world!","url": "journal", "disabled": false},
+    {"text": "Contact", "label":"Let's connect!","url": "contact", "disabled": false}
+  ]
+}

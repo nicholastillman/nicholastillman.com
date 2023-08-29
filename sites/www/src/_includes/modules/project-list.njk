@@ -1,0 +1,16 @@
+<ul class="work-list">
+{% for project in collections.projects %}
+
+ 
+
+  <li class="work-item" {% if project.data.active === false %} disabled{% endif %}>
+    <div class="content">
+      <a href="{{ project.data.projectLink}}">
+        <h3 class="project-title">{{project.data.title}}</h3>
+        <span class="scope">{{project.data.projectMeta.roles}}</span>
+      </a>
+    </div>
+    <img src="{{project.url | url}}{{project.data.coverImg}}" alt="" width="324" height="145">
+  </li>
+{% endfor %}
+</ul>

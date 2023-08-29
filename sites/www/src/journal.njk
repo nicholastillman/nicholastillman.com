@@ -1,0 +1,24 @@
+---
+layout: 'layouts/page.njk'
+title: 'Journal'
+headline: 'Thoughts and Scribbles'
+intro: 'A collection of thoughts, life journeys and pretty much randomness.'
+blurb: 'No new posts at the moment, but stay tuned!'
+quote: 
+  text: "For everything, there is a season, and a time for every purpose under heaven: a time to be born, and a time to die; a time to break down, and a time to build up, a time to cast away stones, and a time to gather stones together; a time to keep silence, and a time to speak."
+  author: '- King Solomon'
+---
+{% block content %}
+<hc-panel size="xl" tokens="_flx-column _lg:flx-row _pb-0">
+  <div class="_lg:aligns-end stack">
+     {% include "modules/large-pageheading.njk" %}
+    {% include "modules/content-box.njk" %}
+
+    <div class="_sp-y-400" style="color:#2b5881;font-family:'Montserrat';font-weight:500;background:#fafafa;padding:1rem;text-align:center;">
+     
+
+    Posts coming soon.
+    </div>
+  </div>
+</hc-panel>
+{% endblock %}

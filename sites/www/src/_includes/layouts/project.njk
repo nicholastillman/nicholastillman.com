@@ -1,0 +1,43 @@
+{% extends "layouts/page.njk" %}
+
+{% block content %}
+  <hc-panel size="xxl" tokens="_flx-column" as="flex-md" role="banner">
+    <header>
+      <h1 class="title">
+        {{ title }}
+      </h1>
+    </header>
+    <section>
+      <div class="_flex _flx-column _justify-between _md:flx-row">
+        <article class="content-box">
+          {{overview}}
+        </article>
+
+      <div class="content-box meta _flex">
+         <div class="module">
+          <h3>Role</h3>
+          <p class="text _sm-text">{{projectMeta.roles}}</p>
+          {# <ul class="role-list">
+            {% for role in projectMeta.role %}
+              <li>{{role}}</li>
+            {% endfor %}
+          </ul> #}
+        </div>
+        <div class="module">
+          <h3>Responsibility</h3>
+          <p class="text _sm-text">{{projectMeta.responsibility}}</p>
+        </div>
+        <div class="module">
+          <h3>Technology</h3>
+          <p class="text _sm-text">{{projectMeta.technology}}</p>
+        </div>
+      </div>
+      </div>
+    </section>
+  </hc-panel>
+  <div class="o-constrain">
+    <article class="hc-stack">
+      {{ content | safe}}
+    </article>
+  </div>
+{% endblock %}

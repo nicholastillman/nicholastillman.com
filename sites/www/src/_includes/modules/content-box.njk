@@ -1,0 +1,28 @@
+{% set heading = page.title %}
+<article class="content-box hc-stack">
+  <header>
+    {# <h1 class="{% if page.url == '/' %}name {% else %}headline{% endif %}"> #}
+    <h1 class="name">
+    {% if page.url == '/' or page.title == 'homepage' %}
+      {{person.name}} 
+      {% else %}
+      {{title}}
+    {% endif %}
+    {# {% if 'journal' or 'contact' in page.url and page.data.headline %}
+    {%endif%} #}
+    </h1>
+    <p class="title">
+      {% if page.url == '/' or page.title == 'homepage' %}
+      {{ person.roles | join(' / ')}}
+      {% endif %}
+    </p>
+  </header>
+
+  {% include "modules/introduction.njk" %}
+    {# TODO: IF blurb, add blurb include here. #}
+    {# TODO: IF quot, include quote module here #}
+
+  {% if image %}
+  <img src="{{'/assets/images/signature1_u.svg'}}">
+  {% endif %}
+</article>

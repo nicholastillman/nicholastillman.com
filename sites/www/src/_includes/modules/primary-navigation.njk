@@ -1,0 +1,10 @@
+<nav class="menu main-nav">
+  {% for item in navigation.menuItems %}
+    <a href="{{item.url | url}}" {% if item.disabled %}
+      disabled
+    {% endif %}>
+      <span class="link-text">{{item.text }}</span>
+      <span class="link-label">{{ item.label }}</span>
+    </a>
+  {% endfor %}
+</nav>

@@ -1,0 +1,20 @@
+<blockquote class="quote">
+  {% if page.url == 'work' %}
+  <div class="hc-stack">
+    <p>“We have <strong>no limits</strong> to our world. We're only limited by our <strong>imagination</strong>.”</p>
+    {% else %}
+      <p class="stack">
+        {% if quote.text %}
+          "{{quote.text}}"
+        {% endif %}
+        
+      </p>
+    {% endif %}
+    <br />
+   <strong>{{quote.author}}</strong>
+{% if 'journal' in page.url %}
+  <hr>
+{% endif %}
+  </div>
+  
+</blockquote>

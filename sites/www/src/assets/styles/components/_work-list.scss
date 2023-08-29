@@ -1,0 +1,145 @@
+.work-list {
+  list-style: none;
+  padding-left: 0;
+  overflow: scroll;
+//  box-shadow: rgb(200, 208, 231) 3.2px 3.2px 8px 0px inset, rgb(255, 255, 255) -3.2px -3.2px 8px 0px inset;
+  .work-item {
+    display: flex;
+    flex: 1;   
+    gap: var(--size-300);
+    align-items: center;
+    justify-content: center;
+    font-weight: lighter;
+    padding-right: var(--size-200);
+    transition: all 400ms ease-in-out;
+
+    &[disabled] {
+      position: relative;
+      
+      .content {
+          &::before {
+            background-color: var(--color-neutral-light200);
+            display: flex;
+            align-items: center;
+            content: 'Case Study - coming soon!';
+            // width: 100px;
+            height: auto;
+            padding-left: var(--size-body);
+            padding-right: var(--size-body);
+            color: var(--color-secondary);
+            position: absolute;
+            font-weight: normal;
+          }
+        }
+    }
+
+    &:hover {
+      .project-title {
+         color: var(--color-secondary); 
+       }
+       .scope {
+        text-decoration: underline;
+         text-decoration-color:  var(--color-accent-secondary);
+       }
+       /*
+      &:nth-child(1) {
+        .project-title {
+         color: var(--color-accent-critical); 
+       }
+      }
+      &:nth-child(2) {
+        .project-title {
+         color: var(--color-accent-secondary); 
+       }
+      }
+      &:nth-child(3) {
+        .project-title {
+         color: var(--color-secondary200); 
+       }
+      }
+      &:nth-child(4) {
+        .project-title {
+         color: var(--color-accent-success); 
+       }
+      }
+      &:nth-child(5) {
+        .project-title {
+         color: var(--color-accent-critical-secondary); 
+       }
+      }*/
+       .content {
+          transform: translateX(10px);
+        }
+        
+        img {
+          opacity: 0.5;
+          transform: translateY(-10px);
+        }
+      }
+
+    @media (max-width: 800px) {
+      border-bottom: 1px solid var(--color-accent-secondary);
+      img {display: none;}
+      max-width: 325px;
+      padding-right: 0;
+    }
+
+    a {
+      color: var(--color-dark-gray); 
+      display: block;
+      text-decoration: none;
+      transition: all 400ms ease-in-out;
+    }
+
+    > img {
+      transition: all 360ms ease-in-out;
+      display: none;
+    }
+    > .content {
+      flex: 1;
+      padding-left: 10px;
+      transition: transform 360ms;
+    }
+
+    .project-title {
+      font-size: clamp(40px, 6.5vw, 2.25rem);
+      font-size: clamp(40px, 6.5vw, 6rem);
+      // font-weight: 500;
+      text-transform: uppercase;
+      // font-family: 'Inter';
+      // TODO: remove these Temp Styles until finalize design
+      font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+      font-weight: lighter;
+      font-size: clamp(48px, 7vw, 7.65rem);
+      transition: all 300ms;
+    }
+    .scope {
+      font-size: clamp(18px, 3vw, 1.25rem);
+      font-size: clamp(18px, 1.55vw, 1.25rem);
+    }
+  }
+  
+  @media (min-width: 800px) {
+    border-bottom: 1px solid #ededed;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-300);
+    overflow: scroll;
+    max-height: 900px;
+    max-height: 600px;
+    max-width: 100%;
+    position: relative;
+    .work-item {
+      display: flex;
+    }
+  }
+
+  // @media (min-width: 1800px) {
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0;
+  //   max-width: 1000px;
+  //   overflow: scroll;
+  //   max-height: 100vh;
+  // }
+}

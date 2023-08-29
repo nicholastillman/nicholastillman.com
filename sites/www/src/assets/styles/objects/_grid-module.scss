@@ -1,0 +1,23 @@
+.o-grid {
+
+  display: grid;
+  grid-template-columns: auto;
+  gap: var(--size-400);
+  
+  @media (min-width: 800px) {
+    grid-template-columns: 60px 1fr;
+  }
+  @media (min-width: 1040px) {
+    grid-template-columns: 100px 1fr;
+  }
+  @media (min-width: 1100px) {
+    gap: 105px;
+  }
+}
+
+.auto-grid {
+  --auto-grid-min-size: 16rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 1rem;
+}

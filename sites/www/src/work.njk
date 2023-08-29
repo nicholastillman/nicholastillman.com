@@ -1,0 +1,59 @@
+---
+layout: 'layouts/page.njk'
+title: 'work'
+intro: 'A collection of some of my best work in UI design, UI development and design systems.'
+blurb: 'Staying current with modern technology is an absolute must. Keeping an open mind and discovering new ways to create amazing products has helped me over the past 15years.'
+em: 'no limits'
+quote: 
+  text: “We have no limits to our world. We're only limited by our imagination.”
+  author: '- Bob Ross'
+---
+
+<div class="flex-item _lg:aligns-end">
+  <article class="content-box hc-stack">
+    <header>
+      <h1 class="name">
+        {% if page.url == '/' or page.title == 'homepage' %}
+          {{person.name}} 
+          {% else %}
+          {{title}}
+        {% endif %}
+      </h1>
+      {% if person.roles %}
+      <p class="title">
+      {{ person.roles | join(' / ')}}
+      </p>
+      {% endif %}
+    </header>
+    <p>{{intro}}</p>
+    
+    {% if blurb %}
+      <p>{{blurb}}</p>
+    {% endif %}
+
+    <blockquote class="quote">
+      {% if 'work' in page.url %}
+      <div class="hc-stack">
+        <p>“We have <strong>no limits</strong> to our world. We're only limited by our <strong>imagination</strong>.”</p>
+        {% else %}
+        <p class="stack">
+        {% if quote.text %}
+        "{{quote.text}}"
+        {% endif %}
+        </p>
+
+      <br />
+      <strong>{{quote.author}}</strong>
+      </div>
+      {% endif %}
+    </blockquote>
+  </article>
+</div>
+<div class="flex-item">
+  {% include "modules/project-list.njk" %}
+</div>
+  
+
+
+
+

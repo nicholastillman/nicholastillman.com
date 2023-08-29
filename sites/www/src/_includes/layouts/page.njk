@@ -1,0 +1,10 @@
+{% extends "layouts/base.njk" %}
+<pre>Layout: Page</pre>
+
+{% block content %}
+  {# <div class="_flex _flex _flx-column _lg:flx-row _pb-0"> #}
+    <hc-panel size="xl" tokens="_flx-column _lg:flx-row _pb-0" as="flex-md">
+    {{content | safe}}
+    </hc-panel>
+  {# </div> #}
+{% endblock %}

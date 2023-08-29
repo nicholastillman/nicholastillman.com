@@ -1,0 +1,9 @@
+.o-constrain {
+  max-width: 1600px;
+  margin: 0 auto;
+
+  &.-narrow {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,74 @@
+.hc-asidenav {
+  display: none;
+  font-family: var(--font-primary);
+  height: 100vh;
+  padding-top: var(--size-200);
+  margin-right: 40px;
+  padding-left: var(--size-200);
+  position: relative;
+
+  &.-example {
+    height: 65vh;
+  }
+
+  @media (min-width: 800px) {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    img {
+      object-fit: contain;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+
+  ::slotted(.aside-menu) {
+    display: flex;
+    align-items: center;
+    gap: var(--size-500);
+    margin-top: clamp(60px, 2vh, 164px); // default 164px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 12vh;
+      content: '';
+      background-color: var(--color-dark-shade);
+      border: none;
+      height: 100px;
+      width: 1px;
+    }
+  }
+
+  .aside-item {
+    writing-mode: sideways-lr;
+  }
+
+  .aside-item {
+    &.copyright {
+      position: absolute;
+      bottom: 6vh;
+      align-self: center;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      &::after {
+        top: 12vh;
+        content: '';
+        background-color: var(--color-dark-shade);
+        border: none;
+        height: 100px;
+        width: 1px;
+      }
+    }
+  }
+}

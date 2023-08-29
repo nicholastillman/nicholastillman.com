@@ -1,0 +1,11 @@
+[build]
+  base = "sites/www"
+  command = "eleventy"
+  functions = "netlify/functions"
+  publish = "public"
+
+#[build.environment]
+  #NODE_VERSION = "18.7.0"
+
+#[dev]
+  #command = "npm start"

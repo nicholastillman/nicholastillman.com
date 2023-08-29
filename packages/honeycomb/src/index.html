@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Libre+Barcode+39+Extended+Text&family=Montserrat:wght@100;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/build/honeycomb.css" />
+
+    <script type="module" src="/build/honeycomb.esm.js"></script>
+    <script nomodule src="/build/honeycomb.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="flex-module">
+        <aside class="sidebar">
+          <h3>Sidebar</h3>
+        </aside>
+        <div class="main-content">
+          <div class="o-constrain">
+            <!-- <hc-panel size="lg">
+              <h2># Header</h2>
+              <hc-header avatar="http://fakeimg.pl/50x50?text=A&font=bebas"></hc-header>
+            </hc-panel>
+            <hc-panel size="lg">
+              <h2># Aside Nav</h2>
+              <hc-asidenav avatar="http://fakeimg.pl/50x50?text=A&font=bebas" is-example>
+                <nav slot="aside-links" class="aside-menu">
+                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link" href="#">Link</a>
+                </nav>
+              </hc-asidenav>
+            </hc-panel> -->
+
+            <hc-panel size="xl" as="flex-md">
+              <div style="border: 1px solid slateblue" class="flex-item">left</div>
+              <div style="border: 1px solid slateblue" class="flex-item">right</div>
+            </hc-panel>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

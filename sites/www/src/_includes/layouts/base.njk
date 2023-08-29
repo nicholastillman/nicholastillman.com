@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Selected works of Nicholas Tillman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Libre+Barcode+39+Extended+Text&family=Montserrat:wght@100;300;400;500;600;700&family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.url }}/assets/styles/style.css">
+</head>
+<body>
+  <div class="site-wrapper">
+   
+    <div class="o-grid">
+      <hc-asidenav avatar="{{'/assets/images/avatar.png'}}">
+        <nav slot="aside-links" class="aside-menu">
+          {% if 'work' in page.url 
+              or 'about' in page.url 
+              or 'journal' in page.url 
+              or 'contact' in page.url
+          %}
+            <a class="nav-link" href="/">HOME</a>
+
+            {% elif 'project' in page.url %}
+            <a class="nav-link" href="/work">WORK</a>
+              
+            {% else %}
+            <a class="nav-link" href="http://linkedin.com">LI</a>
+            <a class="nav-link" href="http://dribbble.com">DR</a>
+          {% endif %}
+          {# TODO: Add logic for the following:
+            If home page: show linked in and dribble links
+            If blog page: show: "Home"
+            If Work page: show: "Home"
+            If Work details page: show: "Work"
+          #}
+        </nav>
+      </hc-asidenav>
+
+      <main role="content">
+        <hc-header site-url="" avatar="{{'/assets/images/avatar.png'}}"></hc-header>
+        <div class="o-constrain">
+        {% block content %}
+          {{content | safe}}
+        {% endblock %}
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="{{ site.url }}/assets/honeycomb/honeycomb.esm.js"></script>
+  <script nomodule="" src="{{ site.url }}/assets/honeycomb/honeycomb.js"></script>
+</body>
+</html>

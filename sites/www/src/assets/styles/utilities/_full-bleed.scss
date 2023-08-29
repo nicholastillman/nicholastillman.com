@@ -1,0 +1,15 @@
+/**
+ * FULL BLEED
+ *
+ * Add this class to an element to make it fill the width of the screen
+ * and sit horizontally central
+ * thanks AndyBell - https://piccalil.li/tutorial/creating-a-full-bleed-css-utility/
+ */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.no-scroll {
+  overflow: hidden;
+}

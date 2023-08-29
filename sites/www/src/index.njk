@@ -1,0 +1,46 @@
+---
+layout: 'layouts/page.njk'
+title: 'homepage'
+image: false
+intro: 'A collection of works  from Fort Worth based developer Nicholas TIllman'
+person:
+  name: Nicholas Tillman
+  contactInfo:
+    - email: n.tillman@proton.me
+    - phone: 817-879-3711
+  roles:
+    - Disciple
+    - Husband
+    - Father
+    - Designer
+    - Engineer
+  website: https://nicholastillman.com
+---
+<div class="flex-item _lg:aligns-end">
+ <!--<article class="content-box hc-stack">
+    <header>
+      <h1 class="name">
+        {% if page.url == '/' or page.title == 'homepage' %}
+          {{person.name}} 
+          {% else %}
+          {{title}}
+        {% endif %}
+      </h1>
+      {% if person.roles %}
+      <p class="title">
+        {{ person.roles | join(' / ')}}
+      </p>
+      {% endif %}
+    </header>
+    {# {% include "modules/introduction.njk" %} #}
+    <p>{{intro}}</p>
+
+    {% if blurb %}
+    <p>{{blurb}}</p>
+    {% endif %}
+ </article> -->
+ {% include "modules/content-box.njk" %}
+</div>
+<div class="flex-item">
+  {% include "modules/primary-navigation.njk" %}
+</div>

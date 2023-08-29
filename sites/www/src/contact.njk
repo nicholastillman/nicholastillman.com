@@ -1,0 +1,20 @@
+---
+layout: 'layouts/page.njk'
+headline: 'Hello.'
+intro: ''
+blurb: "Want to say hello or need a beautiful, well-structured website that you can own and maintain yourself? 
+I'd love to connect."
+quote: 
+  text: 
+  author:
+---
+{% block content %}
+
+<hc-panel size="xl" tokens="_pb-0">
+  <div class="stack">
+    {% include "modules/large-pageheading.njk" %}
+    {% include "modules/content-box.njk" %}
+  </div>
+</hc-panel>
+
+{% endblock %}

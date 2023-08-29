@@ -1,0 +1,16 @@
+.hc-card {
+  font-family: 'Montserrat';
+  font-weight: 100;
+  border: 1px solid #ededed;
+  max-width: 300px;
+}
+
+.hc-card-content {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+img {
+  max-width: 100%;
+}

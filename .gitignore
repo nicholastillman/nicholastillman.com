@@ -1,0 +1,35 @@
+# Misc
+*.log
+npm-debug.*
+*.scssc
+*.swp
+.DS_Store
+Thumbs.db
+.sass-cache
+.env
+.cache
+ideas
+
+# Node modules and output
+node_modules
+dist
+ideas
+components.d.ts
+/public
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+node_modules
+/.cache
+/netlify/functions/server/build
+/public/build
+/dist
+/public
+/.netlify
+.netlify/

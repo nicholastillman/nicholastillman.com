@@ -1,0 +1,23 @@
+{% if intro %}
+<p>{{intro}}</p>
+{# {% else %}
+<p>{{content | safe }}</p> #}
+{%endif%}
+
+{% if blurb %}
+
+    <p>{{blurb}}</p>
+  
+{% endif %}
+
+{% if quote %}
+  {# <p>{{quote.text}}</p> #}
+  {% include "modules/quote.njk" %}
+  {# {{quote.author}} #}
+  
+{% endif %}
+
+
+{% if 'contact' in page.url %}
+  <p>{{intro}} <a href="mailto:nicholastillman@philosofiq.com">Get in touch</a>.</p>
+{% endif %}

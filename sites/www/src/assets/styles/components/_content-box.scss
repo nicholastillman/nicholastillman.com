@@ -1,0 +1,48 @@
+.content-box {
+  max-width: 65ch;
+  font-family: var(--font-accent2);
+  margin-right: var(--size-400);
+  // margin-left: var(--size-400);
+  
+
+  .name,
+  .title {
+    text-transform: uppercase;
+  }
+  .name {
+    font-size: calc(var(--size-body) + .125rem);
+    font-weight: var(--fw-normal);
+  }
+  .title {
+    font-size: 0.875rem;
+    font-weight: var(--fw-light);
+    font-weight: lighter;
+  }
+
+  img {
+    max-width: 199px;
+  }
+
+
+  &.meta {
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
+    .module {
+      border-top: 1px solid;
+      padding: var(--size-body);
+    
+      flex: 1;
+      .text._sm-text {
+        font-size: var(--size-caption);
+      }
+      // .role-list {
+      //   padding-left: 0;
+      //   margin: 0;
+      //   list-style: none;
+      // }
+    }
+  }
+  
+}
+

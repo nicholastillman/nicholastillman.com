@@ -1,0 +1,25 @@
+{
+  "name": "www",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "eleventy --serve",
+    "start": "eleventy --serve --quiet",
+    "build": "eleventy"
+  },
+  "author": "Philosofiq Development Group <developers@philosofiq.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.0.3",
+    "@philosofiq/honeycomb": "^0.0.1",
+    "browserslist": "^4.21.10",
+    "cpx2": "^5.0.0",
+    "lightningcss": "^1.21.5"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
+  }
+}

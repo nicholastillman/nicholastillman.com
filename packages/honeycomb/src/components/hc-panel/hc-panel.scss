@@ -1,0 +1,78 @@
+.hc-panel {
+  padding-top: var(--size-100);
+  padding-bottom: var(--size-100);
+
+  &._flx-column {
+    flex-direction: column;
+  }
+  &._flx-row {
+    flex-direction: row;
+  }
+  // MD based tokens
+  // TODO: Move to separate file
+  @media screen and (min-width: 800px) {
+    &._md\:flx-column {
+      flex-direction: column;
+    }
+    &._md\:flx-row {
+      flex-direction: row;
+    }
+  }
+
+  @media screen and (min-width: 1040px) {
+    &._lg\:flx-column {
+      flex-direction: column;
+    }
+    &._lg\:flx-row {
+      flex-direction: row;
+    }
+  }
+
+  // Variants
+
+  &[data-size='sm'] {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  &[data-size='md'] {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  &[data-size='lg'] {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  &[data-size='xl'] {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  &[data-size='xxl'] {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+
+  // Panel types
+  &[data-panel='flex'],
+  &[data-panel='flex-sm'],
+  &[data-panel='flex-md'],
+  &[data-panel='flex-lg'] {
+    display: flex;
+    gap: var(--size-200); // 24px/1.56rem default gap value
+
+    ::slotted(.flex-item) {
+      // border: 1px solid purple;
+      flex: auto;
+      padding-left: var(--size-400);
+      padding-right: var(--size-400);
+    }
+  }
+  &[data-panel='flex-sm'] {
+    max-width: 1260px;
+  }
+  &[data-panel='flex-md'] {
+    max-width: 1440px;
+  }
+  &[data-panel='flex-lg'] {
+    max-width: 1600px;
+  }
+}
