@@ -1,0 +1,11 @@
+[build]
+  base = "packages/honeycomb"
+  command = "stencil build"
+  functions = "packages/honeycomb/netlify/functions"
+  publish = "dist"
+
+#[build.environment]
+  #NODE_VERSION = "18.7.0"
+
+#[dev]
+  #command = "npm start"

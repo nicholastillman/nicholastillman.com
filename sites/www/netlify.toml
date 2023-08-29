@@ -1,6 +1,6 @@
 [build]
   base = "sites/www"
-  command = "nx run www:build"
+  command = "eleventy"
   functions = "sites/www/netlify/functions"
   publish = "public"
 
