@@ -2,7 +2,10 @@
   "name": "site_nicholastillman",
   "version": "1.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build:honeycomb": "npm i && nx run @philosofiq/honeycomb:build",
+    "build:www": "npm i && nx run build:www"
+  },
   "private": true,
   "dependencies": {},
   "devDependencies": {
