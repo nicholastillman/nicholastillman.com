@@ -4,6 +4,7 @@
   grid-template-columns: auto;
   gap: var(--size-400);
   
+  
   @media (min-width: 800px) {
     grid-template-columns: 60px 1fr;
   }

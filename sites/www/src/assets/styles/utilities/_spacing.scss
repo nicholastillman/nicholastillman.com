@@ -34,3 +34,9 @@
 ._pb-0 {
   padding-bottom: 0;
 }
+
+@media (max-width: 800px) {
+  ._md\:gap-left {
+    margin-left: var(--size-400);
+  }
+}
