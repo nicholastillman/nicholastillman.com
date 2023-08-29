@@ -1,8 +1,8 @@
-[build]
-  base = "sites/www"
-  command = "eleventy"
-  functions = "sites/www/netlify/functions"
-  publish = "public"
+#[build]
+ # base = "sites/www"
+ # command = "eleventy"
+ # functions = "sites/www/netlify/functions"
+ # publish = "public"
 
 #[build.environment]
   #NODE_VERSION = "18.7.0"
