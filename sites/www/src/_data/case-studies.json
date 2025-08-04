@@ -1,0 +1,65 @@
+{
+  "items": [
+    {
+      "title": "Philosofiq Development Group",
+      "projectType": "Personal Project",
+      "itemLink": "https://philosofiq.com",
+      "id": "c738e266-ec59",
+      "src": "/assets/images/philosofiq.webp",
+      "placeholder": "https://via.placeholder.com/1200x600",
+      "alt": "alt text",
+      "description": "Online home of Philosofiq Development Group, a creative design, and development consultancy."
+    },
+    {
+      "title": "Harvest Movement International",
+      "projectType": "Personal Project",
+      "itemLink": "https://hmovement.org",
+      "id": "cec28be6-37e2",
+      "src":"/assets/images/harvest-movement.webp",
+      "placeholder": "https://via.placeholder.com/1200x600",
+      "alt": "alt text",
+      "description": "Online home of Harvest Movement International Ministries."
+    },
+    {
+      "title": "Relentless Truth",
+      "projectType": "Personal Project",
+      "itemLink": "https://relentlesstruth.org/library",
+      "id": "c738e266-ec59",
+      "src": "/assets/images/relentless-truth.webp",
+      "placeholder": "https://via.placeholder.com/1200x600",
+      "alt": "alt text",
+      "description": "Study library for Relentless Truth Ministries to engage community to stay consistent in their study of the Holy Scriptures."
+    },
+     {
+      "title": "Texas Christian University - Majors and Programs",
+      "projectType": "Work Project",
+      "itemLink": "https://www.tcu.edu/academics/programs/index.php",
+      "id": "c738e266-ec59",
+      "src": "/assets/images/tcu-majors-programs.webp",
+      "placeholder": "https://via.placeholder.com/1200x600",
+      "alt": "alt text",
+      "description": "Academic Programs Vue application for Texas Christian University."
+    },
+    {
+      "title": "Texas Christian University - Financial Aid",
+      "projectType": "Work Project",
+      "itemLink": "https://financialaid.tcu.edu/",
+      "id": "c738e266-ec59",
+      "src": "/assets/images/tcu-financial-aid.webp",
+      "placeholder": "https://via.placeholder.com/1200x600",
+      "alt": "alt text",
+      "description": "TCU Financial Aid website."
+    },
+    
+    {
+      "title": "Wise Pockets",
+      "projectType": "Personal Project",
+      "itemLink": "https://wisepockets.pro",
+      "id": "f628fbf3-b194",
+      "src": "/assets/images/wise-pockets.webp",
+      "placeHolder": "https://via.placeholder.com/1200x600",
+      "alt": "alt text",
+      "description": "Creative financing solutions built for small business owners, entrepreneurs, & real estate investors. "
+    }
+  ]
+}
