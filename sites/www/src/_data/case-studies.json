@@ -1,16 +1,6 @@
 {
   "items": [
     {
-      "title": "Philosofiq Development Group",
-      "projectType": "Personal Project",
-      "itemLink": "https://philosofiq.com",
-      "id": "c738e266-ec59",
-      "src": "/assets/images/philosofiq.webp",
-      "placeholder": "https://via.placeholder.com/1200x600",
-      "alt": "alt text",
-      "description": "Online home of Philosofiq Development Group, a creative design, and development consultancy."
-    },
-    {
       "title": "Harvest Movement International",
       "projectType": "Personal Project",
       "itemLink": "https://hmovement.org",
@@ -49,17 +39,6 @@
       "placeholder": "https://via.placeholder.com/1200x600",
       "alt": "alt text",
       "description": "TCU Financial Aid website."
-    },
-    
-    {
-      "title": "Wise Pockets",
-      "projectType": "Personal Project",
-      "itemLink": "https://wisepockets.pro",
-      "id": "f628fbf3-b194",
-      "src": "/assets/images/wise-pockets.webp",
-      "placeHolder": "https://via.placeholder.com/1200x600",
-      "alt": "alt text",
-      "description": "Creative financing solutions built for small business owners, entrepreneurs, & real estate investors. "
     }
   ]
 }
