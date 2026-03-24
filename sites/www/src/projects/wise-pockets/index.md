@@ -12,6 +12,7 @@ projectMeta:
   responsibility: 'UI Design, UI Development'
   technology: 'Eleventy, WordPress (headless CMS)'
 overview: 'Lorem ipsum dolor sit amet consectetur. Sed lacus vel a euismod in. Dictum facilisis enim urna non egestas. Mauris donec viverra nec amet. Varius lectus scelerisque imperdiet curabitur sem. Turpis iaculis suspendisse magna amet et interdum a.'
+active: false
 ---
 ![Alt text]({{coverImg}})
 
