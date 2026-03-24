@@ -8,7 +8,8 @@ import { Component, Prop, h } from '@stencil/core';
 export class HoneycombHeader {
   @Prop() avatar: string = 'http://fakeimg.pl/50x50?text=A&font=bebas';
   @Prop() avatarLink: string = '/';
-  @Prop() resumeLink: string = 'assets/docs/NicholasTillman_resume_2023.docx';
+  // @Prop() resumeLink: string = 'assets/docs/NicholasTillman_resume_2023.docx';
+  @Prop() resumeLink: string ='assets/docs/Nicholas Tillman Resume 2026 (3).pdf';
   @Prop() linkClass: string = '';
   @Prop() siteURL: string = '';
   @Prop() token: string = '';
