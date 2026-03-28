@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sand:    #F5F2E8;
+    --sand-2:  #EEEBE0;
+    --ink:     #1A1916;
+    --ink-mid: #6B6860;
+    --ink-dim: #B0ADA6;
+    --accent:  #8A8672;
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--sand);
+    color: var(--ink);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    overflow: hidden;
+  }
+
+  /* ─────────────────────────────
+     LOADER
+  ───────────────────────────── */
+  #loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--sand);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    padding: 2.5rem 3rem;
+  }
+
+  /* top-left: boot lines */
+  .boot-lines {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 6px;
+    padding-bottom: 2rem;
+  }
+
+  .boot-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--ink-dim);
+    letter-spacing: 0.04em;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .boot-line.show { opacity: 1; transform: translateY(0); }
+
+  .boot-line .prefix { color: var(--ink-mid); }
+  .boot-line .status { margin-left: auto; color: var(--accent); }
+  .boot-line .status.ok { color: #8A9E85; }
+
+  /* blinking cursor on last visible line */
+  .boot-line.active .prefix::after {
+    content: '█';
+    font-size: 9px;
+    animation: blink 0.7s steps(1) infinite;
+    margin-left: 4px;
+    color: var(--ink-mid);
+  }
+
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* top-right: counter */
+  .loader-counter {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  .counter-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(72px, 10vw, 120px);
+    font-weight: 300;
+    color: var(--ink);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .counter-pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 300;
+    color: var(--ink-dim);
+    padding-bottom: 0.4em;
+    margin-left: 4px;
+  }
+
+  /* bottom: progress bar */
+  .loader-bar-row {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .bar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--ink-dim);
+    letter-spacing: 0.12em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bar-track {
+    width: 100%;
+    height: 1px;
+    background: var(--sand-2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.1s linear;
+  }
+
+  /* ── exit ── */
+  #loader.exit {
+    animation: wipe-up 0.75s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  }
+
+  @keyframes wipe-up {
+    to { clip-path: inset(0 0 100% 0); }
+  }
+
+  /* ─────────────────────────────
+     CONTENT
+  ───────────────────────────── */
+  #content {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    padding: 2.5rem 3rem;
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  #content.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s ease 0.15s,
+                transform 0.9s cubic-bezier(0.76, 0, 0.24, 1) 0.15s;
+  }
+
+  .content-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--ink-dim);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .content-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--ink-dim);
+    letter-spacing: 0.1em;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    text-align: right;
+  }
+
+  .content-main {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .content-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(36px, 6vw, 80px);
+    font-weight: 300;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    max-width: 14ch;
+  }
+
+  .content-title em {
+    font-style: normal;
+    color: var(--ink-mid);
+  }
+
+  .content-footer {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 1rem;
+    border-top: 1px solid var(--sand-2);
+  }
+
+  .footer-left {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-dim);
+    letter-spacing: 0.1em;
+  }
+
+  .replay-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    padding: 7px 14px;
+    border-radius: 3px;
+    border: 1px solid var(--sand-2);
+    background: transparent;
+    color: var(--ink-mid);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .replay-btn:hover { border-color: var(--accent); color: var(--ink); }
+
+  @media (prefers-reduced-motion: reduce) {
+    #loader.exit { animation-duration: 0.01s; }
+    #content.visible { transition-duration: 0.01s; }
+    .boot-line { transition-duration: 0.01s; }
+  }
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="boot-lines" id="bootLines"></div>
+  <div class="loader-counter">
+    <span class="counter-number" id="counterNum">000</span>
+    <span class="counter-pct">%</span>
+  </div>
+  <div class="loader-bar-row">
+    <div class="bar-label">
+      <span id="barLabel">// initializing</span>
+      <span id="barPct">0%</span>
+    </div>
+    <div class="bar-track">
+      <div class="bar-fill" id="barFill"></div>
+    </div>
+  </div>
+</div>
+
+<div id="content">
+  <div class="content-eyebrow">// ready</div>
+  <div class="content-meta">v1.0 &nbsp;·&nbsp; 2025</div>
+  <div class="content-main">
+    <h1 class="content-title">Design <em>&</em><br>Development</h1>
+  </div>
+  <div class="content-footer">
+    <span class="footer-left">// all systems nominal</span>
+    <button class="replay-btn" id="replayBtn">↺ replay</button>
+  </div>
+</div>
+
+<script>
+  const LINES = [
+    { text: 'initializing environment',  delay: 0    },
+    { text: 'loading typefaces',         delay: 380  },
+    { text: 'compiling styles',          delay: 760  },
+    { text: 'mounting components',       delay: 1200 },
+    { text: 'ready',                     delay: 2400 },
+  ];
+
+  const BAR_LABELS = [
+    [0,   '// initializing'],
+    [25,  '// loading assets'],
+    [60,  '// compiling'],
+    [85,  '// mounting'],
+    [99,  '// finalizing'],
+  ];
+
+  let counterDone = false;
+  let pageDone    = false;
+  let lineTimers  = [];
+  let rafId       = null;
+
+  const loader    = document.getElementById('loader');
+  const content   = document.getElementById('content');
+  const counterEl = document.getElementById('counterNum');
+  const barFill   = document.getElementById('barFill');
+  const barLabel  = document.getElementById('barLabel');
+  const barPct    = document.getElementById('barPct');
+  const bootLines = document.getElementById('bootLines');
+
+  function buildLines() {
+    bootLines.innerHTML = '';
+    LINES.forEach((l, i) => {
+      const div = document.createElement('div');
+      div.className = 'boot-line';
+      div.innerHTML = `<span class="prefix">//</span> ${l.text} <span class="status" id="ls${i}"></span>`;
+      bootLines.appendChild(div);
+    });
+  }
+
+  function setCounter(n) {
+    counterEl.textContent = String(Math.min(n, 100)).padStart(3, '0');
+    barFill.style.transform = `scaleX(${Math.min(n,100) / 100})`;
+    barPct.textContent = Math.min(n, 100) + '%';
+    const lbl = BAR_LABELS.reduce((a, b) => n >= b[0] ? b : a);
+    barLabel.textContent = lbl[1];
+  }
+
+  function runLoader() {
+    counterDone = false;
+    pageDone    = false;
+
+    // reset
+    loader.style.animation  = 'none';
+    loader.style.clipPath   = 'none';
+    loader.style.display    = 'grid';
+    content.classList.remove('visible');
+    setCounter(0);
+    buildLines();
+
+    // stagger boot lines
+    const els = bootLines.querySelectorAll('.boot-line');
+    lineTimers.forEach(clearTimeout);
+    lineTimers = [];
+
+    LINES.forEach((l, i) => {
+      lineTimers.push(setTimeout(() => {
+        // deactivate previous
+        if (i > 0) els[i-1].classList.remove('active');
+        els[i].classList.add('show', 'active');
+      }, l.delay));
+
+      // mark done after next line starts (or at end)
+      const doneAt = LINES[i+1] ? LINES[i+1].delay - 80 : 2550;
+      lineTimers.push(setTimeout(() => {
+        els[i].classList.remove('active');
+        const s = document.getElementById('ls' + i);
+        if (s) { s.textContent = i === LINES.length - 1 ? '' : 'ok'; s.classList.add('ok'); }
+      }, doneAt));
+    });
+
+    // counter rAF
+    if (rafId) cancelAnimationFrame(rafId);
+    const duration = 2600;
+    const start = performance.now();
+
+    function tick(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const e = 1 - Math.pow(1 - p, 3);
+      setCounter(Math.floor(e * 100));
+      if (p < 1) {
+        rafId = requestAnimationFrame(tick);
+      } else {
+        setCounter(100);
+        setTimeout(() => { counterDone = true; tryDismiss(); }, 300);
+      }
+    }
+    rafId = requestAnimationFrame(tick);
+
+    // page ready gate
+    if (document.readyState === 'complete') {
+      pageDone = true;
+    } else {
+      window.addEventListener('load', () => { pageDone = true; tryDismiss(); }, { once: true });
+    }
+  }
+
+  function tryDismiss() {
+    if (!counterDone || !pageDone) return;
+    dismiss();
+  }
+
+  function dismiss() {
+    loader.style.animation = '';
+    loader.classList.add('exit');
+    content.classList.add('visible');
+    loader.addEventListener('animationend', () => {
+      loader.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }, { once: true });
+  }
+
+  document.getElementById('replayBtn').addEventListener('click', () => {
+    loader.classList.remove('exit');
+    document.body.style.overflow = 'hidden';
+    runLoader();
+  });
+
+  runLoader();
+</script>
+</body>
+</html>
